@@ -33,9 +33,32 @@ class TaskController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        return "Hello!";
+    public function store(Request $request) {
+      $this->validate($request, [
+        'street' => 'required',
+        'house_number' => 'required',
+        'appartment_number' => 'required',
+        'doorcode' => 'required'
+      ]);
+
+      $data = Task::firstOrNew(
+        [
+          'street' => $request->input('street'),
+          'house_number' => $request->input('house_number'),
+          'appartment_number' => $request->input('appartment_number')
+        ]
+      );
+
+      $data->doorcode = $request->input('doorcode');
+      $data->description = $request->input('description');
+
+      if($data->exists) {
+        // return redirect()->route('api/tasks/create')->with('error', 'The data is already present in the database.');
+        return 'The data is already present in the database.';
+      } else {
+        $data->save();
+        return redirect()->route('tasks.index');
+      }
     }
 
     /**

@@ -14,6 +14,8 @@
     <a class="btn btn-primary" href="{{ route('data.json') }}" role="button">JSON</a>
   </div>
 
+    @include('includes.messages')
+
 <table class="table table-striped">
       <thead>
         <tr>

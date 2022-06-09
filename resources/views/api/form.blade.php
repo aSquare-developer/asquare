@@ -14,6 +14,8 @@
         <a class="btn btn-primary" href="{{ route('tasks.index') }}" role="button">Back</a>
       </div>
 
+      @include('includes.messages')
+
       <div class="row">
         <div class="col">
 
