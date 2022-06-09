@@ -1,15 +1,15 @@
 <!--===============================================================================================-->
-	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+	<script src="/vendor/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->
-	<script src="vendor/bootstrap/js/popper.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="/vendor/bootstrap/js/popper.js"></script>
+	<script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
 <!--===============================================================================================-->
-	<script src="vendor/select2/select2.min.js"></script>
+	<script src="/vendor/select2/select2.min.js"></script>
 <!--===============================================================================================-->
-	<script src="vendor/countdowntime/moment.min.js"></script>
-	<script src="vendor/countdowntime/moment-timezone.min.js"></script>
-	<script src="vendor/countdowntime/moment-timezone-with-data.min.js"></script>
-	<script src="vendor/countdowntime/countdowntime.js"></script>
+	<script src="/vendor/countdowntime/moment.min.js"></script>
+	<script src="/vendor/countdowntime/moment-timezone.min.js"></script>
+	<script src="/vendor/countdowntime/moment-timezone-with-data.min.js"></script>
+	<script src="/vendor/countdowntime/countdowntime.js"></script>
 	<script>
 		$('.cd100').countdown100({
 			/*Set Endtime here*/
@@ -26,11 +26,11 @@
 		});
 	</script>
 <!--===============================================================================================-->
-	<script src="vendor/tilt/tilt.jquery.min.js"></script>
+	<script src="/vendor/tilt/tilt.jquery.min.js"></script>
 	<script >
 		$('.js-tilt').tilt({
 			scale: 1.1
 		})
 	</script>
 <!--===============================================================================================-->
-	<script src="js/main.js"></script>
+	<script src="/js/main.js"></script>
