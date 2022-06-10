@@ -13,7 +13,7 @@ class TaskController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index() {
-      $tasks = Task::orderBy('created_at', 'asc')->get();
+      $tasks = Task::orderBy('created_at', 'desc')->get();
       return view('api.home', compact('tasks'));
     }
 
@@ -39,6 +39,11 @@ class TaskController extends Controller
         'house_number' => 'required',
         'appartment_number' => 'required',
         'doorcode' => 'required'
+      ], [
+        'street.required' => 'Street field is required.',
+        'house_number.required' => 'House number field is required.',
+        'appartment_number.required' => 'Appartament number field is required.',
+        'doorcode.required' => 'Doorcode field is required.'
       ]);
 
       $data = Task::firstOrNew(
@@ -53,11 +58,10 @@ class TaskController extends Controller
       $data->description = $request->input('description');
 
       if($data->exists) {
-        // return redirect()->route('api/tasks/create')->with('error', 'The data is already present in the database.');
-        return 'The data is already present in the database.';
+        return back()->with('error', 'The data is already present in the database.');
       } else {
         $data->save();
-        return redirect()->route('tasks.index');
+        return redirect()->route('tasks.index')->with('success', 'Data has been added.');;
       }
     }
 

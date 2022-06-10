@@ -16,10 +16,13 @@ use \App\Http\Controllers\TaskController;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+
+
+Route::group(['middleware' => ['web']], function () {
+  Route::resource('tasks', TaskController::class);
+
+  Route::get('data/json', [TaskController::class, 'getJsonFormat'])->name('data.json');
 });
-
-Route::resource('tasks', TaskController::class);
-
-Route::get('data/json', [TaskController::class, 'getJsonFormat'])->name('data.json');

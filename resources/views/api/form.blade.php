@@ -7,7 +7,7 @@
 
     <div class="container">
       <div class="py-3 text-center">
-        <h2>Creating/Updating data</h2>
+        <h2>Creating data</h2>
       </div>
 
       <div class="pb-3 text-center">
